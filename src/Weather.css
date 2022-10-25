@@ -1,21 +1,17 @@
 body {
   margin-top: 30px;
   font-family: "Poppins", sans-serif;
-  max-width: 700px;
-  max-height: 500px;
 }
 
 .container-weather {
-  background-color: #f8f9fa;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-  margin: 10px 10px 0px 10px;
-  color: #4f5e58;
-  border: 1px solid #48534f;
+  box-shadow: 1px rgba(0, 0, 0, 0.1);
+  margin: 30px 30px auto;
+  color: #878787;
+  border: 1px solid #dadde1;
   border-radius: 4px;
   padding: 10px;
   font-family: "Poppins", sans-serif;
-  max-width: 700px;
-  max-height: 500px;
+  max-width: 500px;
 }
 
 /*Location*/
@@ -26,11 +22,12 @@ body {
 }
 #location {
   font-size: 24px;
-  font-weight: 600;
-  color: #4f5e58;
+  font-weight: 500;
+  color: #878787;
+  margin-bottom: 5px;
 }
 .current-date {
-  font-size: 18px;
+  font-size: 15px;
   margin-top: -5px;
   padding-top: 0px;
   margin-bottom: 30px;
@@ -40,18 +37,23 @@ body {
 .weather-details {
   font-size: 13px;
   list-style: none;
-  margin-left: -30px;
-  margin-top: -20px;
+  padding-left: 0;
 }
 /*Current*/
 .container-weather .current-temperature {
-  font-size: 45px;
+  font-size: 40px;
   color: #4f5e58;
   line-height: 1;
   display: flex;
   justify-content: center;
+  margin-top: -50px;
 }
-#temp-units {
+
+.current-temperature strong {
+  font-size: 17px;
+}
+
+/*#temp-units {
   color: #4f5e58;
   font-size: 15px;
   display: flex;
@@ -59,27 +61,17 @@ body {
   padding-top: 5px;
   line-height: 1;
 }
+*/
 
-#celsius-link,
 #fahrenheit-link {
   text-decoration: none;
 }
 
-#temp-div {
-  margin-top: 0;
-}
-
-#temp-units {
-  color: #4f5e58;
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
-  padding-top: 5px;
-  line-height: 1;
-}
-
 #icon {
   max-width: 60px;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
 }
 /*Search*/
 .change-city {
@@ -89,34 +81,34 @@ body {
 }
 
 .change-city-button {
-  border: 1px solid #4f5e58;
-  border-radius: 5px;
-  background: #4f5e58;
+  border: 1px solid #878787;
+  border-radius: 3px;
+  background: #878787;
   color: #f0fdf8;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 .city-input {
-  border: 1px solid #4f5e58;
-  border-radius: 5px;
+  border: 1px solid #dadde1;
+  border-radius: 3px;
 }
-
+/*
 .current-location-button {
   border: none;
-  background-color: #f8f9fa;
-  color: #4f5e58;
+  background-color: white;
   margin-top: 2px;
 }
-.current-location-img {
+*/
+/*.current-location-img {
   max-width: 20px;
   max-height: 20px;
 }
-
+*/
 /*Footer*/
 #coded-by {
   font-size: 13px;
   display: flex;
-  margin-right: 10px;
-  justify-content: end;
+  justify-content: center;
+  margin-right: 300px;
 }
 
 #git-link {

@@ -1,64 +1,44 @@
-import React from "react";
-//import axios from "axios";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Weather.css";
-import Search from "./Search";
+import WeatherInfo from "./WeatherInfo";
 import bootstrap from "bootstrap";
 
-const Cloudy = require("./icon.jpeg");
 export default function Weather() {
+  const ApiKey = "393aa3ab02bfb9bf0et3b4b7c32oea88";
+  let city = "Seattle";
+  let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${ApiKey}`;
+  axios.get(ApiUrl).then(displayWeather);
+
+  function displayWeather(response) {
+    console.log(response);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="Weather">
       <div className="container-weather">
-        <div className="row">
-          <div className="col-sm-3">
-            <div className="Location">
-              <h1 id="location"> response.data.city</h1>
-              <h2 className="current-date">Sunday October 2, 2022</h2>
-              <ul className="weather-details">
-                <li>
-                  Humidity: <span id="humidity">60</span>%
-                </li>
-                <li>
-                  Wind: <span id="wind">2</span> m/h
-                </li>
-              </ul>
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-sm-9">
+              <input
+                type="search"
+                className="city-input"
+                autoComplete="off"
+                placeholder="Enter a city.."
+                onChange
+              />
+            </div>
+            <div className="col-sm-3">
+              <button className="change-city-button" type="submit">
+                Search
+              </button>
             </div>
           </div>
-          <div className="col-sm-3">
-            <div className="Current">
-              <span className="current-temperature"> 78</span>
-              <p id="temp-units">
-                <a href="/" id="fahrenheit-link" className="active">
-                  °F|
-                </a>
-                <a href="/" id="celsius-link">
-                  °C
-                </a>
-              </p>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <div className="Icon">
-              <img src={Cloudy} alt="Weather Description" id="icon" />
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <Search />
-          </div>
-        </div>
-      </div>
-      <div className="Footer">
-        <span id="coded-by">
-          <a
-            href="https://github.com/rsm917/weather-app-react"
-            id="git-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open-source code
-          </a>
-          by Rebecca Shuping
-        </span>
+        </form>
+        <WeatherInfo />
       </div>
     </div>
   );
