@@ -50,7 +50,7 @@ export default function Weather() {
       <div className="Footer">
         <span id="coded-by">
           <a
-            href="https://github.com/rsm917/react-weather"
+            href="https://github.com/rsm917/weather-app-react"
             id="git-link"
             target="_blank"
             rel="noreferrer"
