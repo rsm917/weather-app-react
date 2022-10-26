@@ -15,16 +15,11 @@ body {
 }
 
 /*Location*/
-.location {
-  margin-top: 0;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
 #location {
   font-size: 24px;
   font-weight: 500;
   color: #878787;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 .current-date {
   font-size: 15px;
