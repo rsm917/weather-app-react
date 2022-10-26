@@ -4,25 +4,24 @@ import "./Weather.css";
 import bootstrap from "bootstrap";
 const Cloudy = require("./icon.jpeg");
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState(null);
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function displayWeather(response) {
     setWeatherData({
       ready: true,
       city: response.data.city,
       coordinates: response.data.coordinates,
+      icon: response.data.condition.icon_url,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
     });
     console.log(response);
-    setReady(true);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="container-weather">
@@ -54,7 +53,11 @@ export default function Weather() {
             <div className="row">
               <div className="col-sm-6">
                 <div className="Icon">
-                  <img src={Cloudy} alt="Weather Description" id="icon" />
+                  <img
+                    src={weatherData.icon}
+                    alt={weatherData.description}
+                    id="icon"
+                  />
                 </div>
                 <div className="current-temperature">
                   {" "}
@@ -74,8 +77,8 @@ export default function Weather() {
     );
   } else {
     const ApiKey = "393aa3ab02bfb9bf0et3b4b7c32oea88";
-    let city = "Seattle";
-    let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${ApiKey}`;
+
+    let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${ApiKey}`;
     axios.get(ApiUrl).then(displayWeather);
     return "Loading...";
   }
