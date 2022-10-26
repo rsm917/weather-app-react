@@ -9,7 +9,7 @@ body {
   color: #878787;
   border: 1px solid #dadde1;
   border-radius: 4px;
-  padding: 10px;
+  padding: 20px 10px;
   font-family: "Poppins", sans-serif;
   max-width: 500px;
 }
@@ -20,6 +20,7 @@ body {
   font-weight: 500;
   color: #878787;
   margin-bottom: 0;
+  margin-top: 5px;
 }
 .current-date {
   font-size: 15px;
@@ -32,22 +33,27 @@ body {
 .weather-details {
   font-size: 13px;
   list-style: none;
-  padding-left: 0;
 }
 /*Current*/
 .container-weather .current-temperature {
-  font-size: 40px;
+  font-size: 60px;
   color: #4f5e58;
   line-height: 1;
   display: flex;
   justify-content: center;
-  margin-top: -50px;
+  margin-top: -80px;
 }
 
-.current-temperature strong {
-  font-size: 17px;
+.WeatherTemperature .unit {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  margin-right: -80px;
+  margin-top: -70px;
 }
-
+.WeatherTemperature .unit a {
+  text-decoration: none;
+}
 /*#temp-units {
   color: #4f5e58;
   font-size: 15px;
@@ -66,7 +72,9 @@ body {
   max-width: 80px;
   line-height: 1;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  margin-left: -10px;
+  margin-bottom: 10px;
 }
 /*Search*/
 .change-city {

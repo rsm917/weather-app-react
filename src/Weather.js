@@ -27,7 +27,7 @@ export default function Weather(props) {
   function search() {
     const ApiKey = "393aa3ab02bfb9bf0et3b4b7c32oea88";
 
-    let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${ApiKey}`;
+    let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${ApiKey}&units=imperial`;
     axios.get(ApiUrl).then(displayWeather);
   }
   function handleSubmit(event) {
@@ -48,7 +48,7 @@ export default function Weather(props) {
               <div className="col-sm-9">
                 <input
                   type="search"
-                  className="city-input"
+                  className="city-input form-control"
                   autoComplete="off"
                   autoFocus="on"
                   placeholder="Enter a city.."
@@ -56,7 +56,10 @@ export default function Weather(props) {
                 />
               </div>
               <div className="col-sm-3">
-                <button className="change-city-button" type="submit">
+                <button
+                  className="btn btn-secondary change-city-button"
+                  type="submit"
+                >
                   Search
                 </button>
               </div>
