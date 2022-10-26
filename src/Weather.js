@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 import bootstrap from "bootstrap";
 const Cloudy = require("./icon.jpeg");
@@ -11,6 +12,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       city: response.data.city,
+      date: new Date(response.data.time * 1000),
       coordinates: response.data.coordinates,
       icon: response.data.condition.icon_url,
       temperature: response.data.temperature.current,
@@ -46,7 +48,9 @@ export default function Weather(props) {
           <div className="WeatherInfo">
             <h1 id="location"> {weatherData.city}</h1>
             <ul className="weather-details">
-              <li>Sunday 13:00</li>
+              <li>
+                <FormattedDate date={weatherData.date} />
+              </li>
               <li className="text-capitalize">{weatherData.description}</li>
             </ul>
 
