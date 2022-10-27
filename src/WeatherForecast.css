@@ -1,8 +1,17 @@
 .WeatherForecast {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
+  font-size: 13px;
 }
 
 .WeatherForecast-temp-min {
   opacity: 0.6;
+}
+
+.WeatherForecast .WeatherForecast-day {
+  font-weight: 400;
+}
+
+.forecast-icon {
+  max-width: 50px;
 }
