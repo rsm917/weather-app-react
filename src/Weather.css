@@ -49,8 +49,8 @@ body {
   font-size: 15px;
   display: flex;
   justify-content: center;
-  margin-right: -85px;
-  margin-top: -70px;
+  margin-right: -100px;
+  margin-top: -60px;
   font-weight: 600;
 }
 .WeatherTemperature .unit a {
