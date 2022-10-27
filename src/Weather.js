@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 import bootstrap from "bootstrap";
 const Cloudy = require("./icon.jpeg");
@@ -12,9 +13,9 @@ export default function Weather(props) {
   function displayWeather(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coordinates,
       city: response.data.city,
       date: new Date(response.data.time * 1000),
-      coordinates: response.data.coordinates,
       icon: response.data.condition.icon_url,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
@@ -66,6 +67,7 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherInfo data={weatherData} />
+          <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
       </div>
     );
