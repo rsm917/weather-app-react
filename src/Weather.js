@@ -5,7 +5,6 @@ import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 import bootstrap from "bootstrap";
 import { ThreeDots } from "react-loader-spinner";
-const Cloudy = require("./icon.jpeg");
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
