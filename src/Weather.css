@@ -127,7 +127,7 @@ body {
   .weather-description,
   .current-time {
     text-align: center;
-    margin-left: -220px;
+    margin-left: -215px;
   }
   .WeatherTemperature {
     margin-top: -10px;
