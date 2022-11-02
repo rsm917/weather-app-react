@@ -4,6 +4,7 @@ import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 import bootstrap from "bootstrap";
+import { ThreeDots } from "react-loader-spinner";
 const Cloudy = require("./icon.jpeg");
 
 export default function Weather(props) {
@@ -22,7 +23,6 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
     });
-    //console.log(response);
   }
 
   function search() {
@@ -73,6 +73,19 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return (
+      <div className="Spinner">
+        <ThreeDots
+          height="60"
+          width="60"
+          radius="9"
+          color="##5C636A"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+        />
+      </div>
+    );
   }
 }
